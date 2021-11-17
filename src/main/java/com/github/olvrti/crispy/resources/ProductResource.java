@@ -26,14 +26,12 @@ public class ProductResource {
 
   @GetMapping
   public ResponseEntity<List<Product>> findAll() {
-    final List<Product> products = service.findAll();
-    return ResponseEntity.ok().body(products);
+    return ResponseEntity.ok().body(service.findAll());
   }
 
   @GetMapping(value = "/{id}")
   public ResponseEntity<Product> find(@PathVariable final Integer id) {
-    final Product product = service.find(id);
-    return ResponseEntity.ok().body(product);
+    return ResponseEntity.ok().body(service.find(id));
   }
 
   @PostMapping

@@ -21,7 +21,7 @@ public class ProductService {
 
   public Product find(final Integer id) {
     final Optional<Product> product = repository.findById(id);
-    return product.orElseThrow(() -> new ObjectNotFoundException(String.format("Object not found: %s", id)));
+    return product.orElseThrow(() -> new ObjectNotFoundException(String.format("Product not found: %d", id)));
   }
 
   public Product create(final Product product) {
